@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    #font-family Samnsung
+\*------------------------------------*/
+@font-face {
+  font-family: 'Samsung Sharp Sans Bold';
+  src: url('../fonts/SamsungSharpSans-Bold.woff2') format('woff2'),
+      url('../fonts/SamsungSharpSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SamsungOne 400';
+  src: url('../fonts/SamsungOne-400.woff2') format('woff2'),
+      url('../fonts/SamsungOne-400.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Samsung Sharp Sans Regular';
+  src: url('../fonts/SamsungSharpSans-Regular.woff2') format('woff2'),
+      url('../fonts/SamsungSharpSans-Regular.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SamsungOne 700';
+  src: url('../fonts/SamsungOne-700.woff2') format('woff2'),
+      url('../fonts/SamsungOne-700.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+$font-size-base: 16px;
+
+body {
+  color: $c-text;
+  font-family: 'SamsungOne 400';
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,419 @@
+main {
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+.hero {
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
+    background: url(../images/hero.jpg) no-repeat $c-black;
+    background-position:60% 0%;
+    background-size: cover;
+    color: $c-neutro;
+    min-height: 100vh;
+
+    #pixie {
+        position: absolute;
+        max-width: 80vw;
+        z-index:0;
+    }
+
+    &__inner {
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+        max-width: 1200px;
+        margin: auto;
+        width: 100%;
+    }
+
+    &__content {
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+    }
+
+    &__title {
+        @include font-rem(26px);
+        font-family: 'Samsung Sharp Sans Regular';
+        max-width: 475px;
+        text-align: center;
+
+        span {
+            display: block;
+            font-family: 'Samsung Sharp Sans Bold';
+            @include font-rem(35px);
+        }
+    }
+
+    .scroll-icon {
+        background: url(../dist/images/scroll-icon.png) no-repeat center;
+        background-size: cover;
+        display: block;
+        font-size: 0;
+        height: 50px;
+        margin: 60px 0 30px;
+        width: 28px;
+    }
+
+    &__logo {
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+        &:before {
+            background: $c-neutro;
+            content: "";
+            display: block;
+            height: 205px;
+            margin: 50px 0;
+            width: 2px;
+        }
+
+        img {
+            max-width: 294px;
+        }
+
+    }
+
+    .floating-light {
+        position: absolute;
+        bottom: -280px;
+        left: 10%;
+        animation: float 7s ease-in-out infinite;
+        z-index: 3;
+    }
+    
+    .floating-light2 {
+        position: absolute;
+        bottom: -15%;
+        left: 50%;
+        animation: float 5s ease-in-out infinite;
+        z-index: 2;
+    }
+    
+
+}
+
+@keyframes float {
+    0% {
+        
+        transform: translatey(0px);
+    }
+
+    50% {
+       
+        transform: translatey(-50px);
+    }
+
+    100% {
+       
+        transform: translatey(0px);
+    }
+}
+
+@keyframes shrink {
+    0% {
+      background-size: auto 100%;
+    }
+    100% {
+      background-size: auto 110%;
+    }
+  }
+
+.section {
+    position: relative;
+    &__inner {
+        margin: auto;
+        max-width: 1240px;
+        padding: 0 20px;
+
+        &.section__inner-tight {
+            max-width: 1140px; 
+        }
+        
+    }
+
+    &__row  {
+        margin: auto;
+        max-width: 1140px; 
+        padding: 0 20px;
+    }
+
+    &--centered {
+        background: url(../dist/images/bg-section1.png) no-repeat center;
+        background-attachment: fixed ;
+        &:before {
+            background: $c-black;
+            content: "";
+            display: block;
+            width: 2px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        &:after {
+            background: $c-black;
+            content: "";
+            display: block;
+            width: 2px;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .section__inner {
+            @include flexbox;
+            @include flex-direction(column);
+            @include align-items(center);
+            padding: 200px 0 300px;
+            text-align: center;
+            img {
+                margin: 30px;
+                max-width: 400px;
+                width: 80%;
+            }
+
+            h2 {
+                font-family: 'Samsung Sharp Sans Bold';
+                @include font-rem(45px);
+                padding: 0 20px;
+            }
+           
+        }
+    }
+
+    &__title {
+        font-family: 'Samsung Sharp Sans Bold';
+        @include font-rem(36px);
+        margin: 0 0 10px;
+    }
+
+    p {
+        font-family: 'SamsungOne 400';
+        @include font-rem(16px);
+        margin: 0 0 10px;
+    }
+
+    &__col {
+        padding-bottom: 50px;
+
+        img {
+            display: block;
+            margin: 30px auto;
+        }
+    }
+}
+
+.backgroundOne {
+    background: url(../dist/images/bg-section2.png) no-repeat center $c-black;
+    animation: shrink 15s infinite alternate;
+    color: $c-neutro;
+
+    .section__inner {
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+
+        img {
+            display: block;
+            width: 90%;
+            max-width: 388px;
+            margin: 50px auto 80px;
+        }
+    }
+
+}
+
+.year {
+    display: inline-block;
+    font-family: 'Samsung Sharp Sans Bold';
+    @include font-rem(65px);
+    line-height: 40px;
+    margin-bottom: 50px;
+    padding: 25px 15px 0 0;
+    position: relative;    
+    text-align: right;
+
+    &:after {
+        content: "";
+        height: 100%;
+        width: 2px;
+        background: $c-neutro;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    span {
+        @include font-rem(30px);
+        line-height: 60px;
+        font-family: 'Samsung Sharp Sans Regular';
+        display: block;
+    }
+
+    &.black-border {
+        &:after {
+      
+            background: $c-black;
+       
+        }
+    }
+
+   
+}
+
+.backgroundTwo {
+    background: url(../dist/images/bg-section3.png) no-repeat center $c-black;
+    animation: shrink 15s infinite alternate;
+    color: $c-neutro;
+
+    .section__inner {
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+
+        img {
+            display: block;
+            width: 90%;
+            max-width: 388px;
+            margin: 50px auto 80px;
+        }
+    }
+
+}
+
+.backgroundThree {
+    background: $c-light-grey;
+}
+
+
+@include media-query(medium) {
+
+    .hero {
+        background-position: center center;
+
+        &__inner {
+            @include align-items(flex-end);
+        }
+        &__content,  &__logo {
+            @include align-items(flex-end);
+        }
+        &__title {
+            @include font-rem(36px);
+            text-align: right;
+    
+            span {
+                @include font-rem(55px);
+            }
+        }
+
+        .floating-light {
+            bottom: -100px;
+            left: 10%;
+        }
+        
+        .floating-light2 {
+            bottom: 15%;
+            left: 20%;
+           
+        }
+    }
+
+    .section {
+        &--centered {
+            .section__inner {
+                @include flex-direction(row);
+                text-align: left;
+            }
+        }
+
+        &__content--cols {
+            @include flexbox;
+            @include flex-direction(row);
+        
+            
+        }
+
+        &__col {
+            flex: 50%;
+            margin-bottom: 10px;
+
+            img {
+                margin: 50px auto;
+            }
+        }
+
+        &__row {
+            @include flexbox;
+            @include flex-direction(row);
+            text-align: right;
+
+            .section__col {
+                padding: 0 40px;
+
+                p {
+                    padding-left: 50px;
+                }
+
+            }
+        }
+    }
+ 
+    .backgroundOne {    
+        background: url(../dist/images/bg-section2.png) no-repeat right center $c-black;
+        .section__inner {
+            @include align-items(flex-start);
+        }
+        
+    }
+
+    .backgroundTwo {    
+        background: url(../dist/images/bg-section3.png) no-repeat right center $c-black;
+        .section__inner {
+            @include align-items(flex-start);
+        }
+        
+    }
+
+    .year {
+        &.year-2010 {
+            &::after {
+                height: 220px;
+            }
+        }
+        &.year-2017 {
+            &:after {
+                height: 2px;
+                width: 200px;
+                right: auto;
+                left: -250px;
+               
+            }
+        }
+    }
+
+
+}
+
+@include media-query(wide) {
+  
+
+}
+
+@include media-query(large) {
+   
+
+}
+
+
+@include media-query(huge) {
+   
+}
