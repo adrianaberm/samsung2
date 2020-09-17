@@ -10,7 +10,7 @@ main {
     background-position:60% 0%;
     background-size: cover;
     color: $c-neutro;
-    min-height: 100vh;
+    min-height: 105vh;
 
     #pixie {
         position: absolute;
@@ -60,33 +60,38 @@ main {
         @include flexbox;
         @include flex-direction(column);
         @include align-items(center);
+        margin-bottom: 50px;
         &:before {
             background: $c-neutro;
             content: "";
             display: block;
-            height: 205px;
-            margin: 50px 0;
+            height: 100px;
+            margin: 30px 0;
             width: 2px;
         }
 
         img {
-            max-width: 294px;
+            max-width: 250px;
         }
 
     }
 
     .floating-light {
         position: absolute;
-        bottom: -280px;
+        bottom: -200px;
         left: 10%;
         animation: float 7s ease-in-out infinite;
         z-index: 3;
+
+        img {
+            max-width: 55%;
+        }
     }
     
     .floating-light2 {
         position: absolute;
-        bottom: -15%;
-        left: 50%;
+        bottom: -25%;
+        left: 38%;
         animation: float 5s ease-in-out infinite;
         z-index: 2;
     }
@@ -435,9 +440,28 @@ main {
             }
         }
 
+        &__logo {
+            
+            &:before {
+               
+                height: 205px;
+                margin: 50px 0;
+             
+            }
+    
+            img {
+                max-width: 294px;
+            }
+    
+        }
+
         .floating-light {
             bottom: -100px;
             left: 10%;
+
+            img {
+                max-width: inherit;
+            }
         }
         
         .floating-light2 {
