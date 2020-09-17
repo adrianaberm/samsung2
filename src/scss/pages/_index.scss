@@ -1,6 +1,5 @@
 main {
     overflow: hidden;
-    padding-bottom: 40px;
 }
 
 .hero {
@@ -48,7 +47,7 @@ main {
     }
 
     .scroll-icon {
-        background: url(../dist/images/scroll-icon.png) no-repeat center;
+        background: url(../images/scroll-icon.png) no-repeat center;
         background-size: cover;
         display: block;
         font-size: 0;
@@ -141,7 +140,7 @@ main {
     }
 
     &--centered {
-        background: url(../dist/images/bg-section1.png) no-repeat center;
+        background: url(../images/bg-section1.png) no-repeat center;
         background-attachment: fixed ;
         &:before {
             background: $c-black;
@@ -200,6 +199,10 @@ main {
         font-family: 'SamsungOne 400';
         @include font-rem(16px);
         margin: 0 0 10px;
+
+        strong {
+            font-family: 'SamsungOne 700';
+        }
     }
 
     &__col {
@@ -208,12 +211,13 @@ main {
         img {
             display: block;
             margin: 30px auto;
+            max-width: 100%;
         }
     }
 }
 
 .backgroundOne {
-    background: url(../dist/images/bg-section2.png) no-repeat center $c-black;
+    background: url(../images/bg-section2.png) no-repeat center $c-black;
     animation: shrink 15s infinite alternate;
     color: $c-neutro;
 
@@ -245,7 +249,7 @@ main {
     &:after {
         content: "";
         height: 100%;
-        width: 2px;
+        width: 3px;
         background: $c-neutro;
         position: absolute;
         right: 0;
@@ -267,11 +271,25 @@ main {
         }
     }
 
+    &.year-2021 {
+        margin-bottom: 200px;
+        &:before {
+            background: url(../images/dots.png) no-repeat center;
+            content: "";
+            width: 5px;
+            height: 100px;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: calc(100% +  40px);
+        }
+    }
+
    
 }
 
 .backgroundTwo {
-    background: url(../dist/images/bg-section3.png) no-repeat center $c-black;
+    background: url(../images/bg-section3.png) no-repeat center $c-black;
     animation: shrink 15s infinite alternate;
     color: $c-neutro;
 
@@ -292,6 +310,108 @@ main {
 
 .backgroundThree {
     background: $c-light-grey;
+}
+
+.backgroundBlack {
+    background: $c-black;    
+}
+
+.content--centered {
+    text-align: center;
+}
+
+.image-holder {
+    background: url(../images/bg-section5.jpg) center top no-repeat;
+    color: $c-neutro;
+    padding: 65px 20px;
+    margin-bottom: 80px;
+
+    p {
+        max-width: 765px;
+        margin: auto;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.cta {
+    color: $c-neutro;
+    padding: 75px 20px;
+    text-align: center;
+
+    p {
+        font-family: 'Samsung Sharp Sans Bold';
+        @include font-rem(22px);
+        max-width: 890px;
+        margin: 0 auto 40px;
+    }
+}
+
+.btn-outline {
+    @include font-rem(14px);
+    display: inline-block;
+    border: 1px solid $c-neutro;
+    border-radius: 18px;
+    color: $c-black;
+    margin: 20px 0;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    background: $c-neutro;
+    overflow: hidden;
+    transition-property: color;
+    transition-duration: 0.3s;
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $c-black;
+        transform: scaleX(0);
+        transform-origin: 50%;
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $c-neutro;
+
+        &:before {
+            transform: scaleX(1);
+        }
+    }
+
+    &.btn-white {
+        background: $c-black;
+        border-color: $c-neutro;
+        color: $c-neutro;
+
+        &:before {
+            background: $c-neutro
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $c-black;
+
+            &:before {
+                -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+            }
+        }
+    }
 }
 
 
@@ -364,11 +484,53 @@ main {
                 }
 
             }
+
+            &--full {
+                position: relative;
+                max-width: 100%;
+                padding: 0;
+                @include justify-content(justify-content);
+
+                
+                
+                .section__col {
+                    padding: 0;
+                    margin: 0;
+                    &:first-of-type {
+                        @include flexbox;
+                        @include justify-content(flex-end);
+                       
+                        padding: 0 50px;
+                        text-align: center;
+
+                        p {
+                            max-width: 90%;
+                        }
+                     
+                    }
+
+                    &:last-of-type {
+                        overflow: hidden;
+                      
+                        img {
+                            margin: 0;
+                            height: calc(100% - 45px);
+                            width: auto;
+                            max-width: fit-content;
+                            
+                        }
+                    }
+                }
+            }
+        }
+
+        &--overlap {
+            margin-top: -45px;
         }
     }
  
     .backgroundOne {    
-        background: url(../dist/images/bg-section2.png) no-repeat right center $c-black;
+        background: url(../images/bg-section2.png) no-repeat right center $c-black;
         .section__inner {
             @include align-items(flex-start);
         }
@@ -376,12 +538,29 @@ main {
     }
 
     .backgroundTwo {    
-        background: url(../dist/images/bg-section3.png) no-repeat right center $c-black;
+        background: url(../images/bg-section3.png) no-repeat right center $c-black;
         .section__inner {
             @include align-items(flex-start);
         }
         
     }
+
+    .backgroundThree {
+        background: transparent;
+        position: relative;
+
+        &:before {
+            background: $c-light-grey;
+            content: "";
+            height: calc(100% - 45px);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+    
 
     .year {
         &.year-2010 {
@@ -396,6 +575,22 @@ main {
                 right: auto;
                 left: -250px;
                
+            }
+        }
+
+        &.year-2020 {
+            width: 50%;
+            margin-left: 0;
+            display: block;
+        }
+
+        &.year-2021 {
+            width: 50%;
+            margin-left: 0;
+            display: block;
+            &:after {
+                height: 180px;
+                bottom: 0;
             }
         }
     }
