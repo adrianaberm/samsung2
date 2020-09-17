@@ -98,16 +98,7 @@ var WIDTH = window.innerWidth,
         AOS.init();
 
         (function($){
-            
-            //Plugin activation
-            $(window).enllax();
-            
-//            $('#some-id').enllax();
-            
-//            $('selector').enllax({
-//                type: 'background', // 'foreground'
-//                ratio: 0.5,
-//                direction: 'vertical' // 'horizontal'
-//            });
+        
+        	$(window).enllax();
             
         })(jQuery);
